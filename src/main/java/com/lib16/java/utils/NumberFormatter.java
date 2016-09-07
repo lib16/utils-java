@@ -4,11 +4,14 @@ import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class NumberFormatWrapper
+public class NumberFormatter
 {
+	public static final NumberFormatter DEFAULT_FORMATTER = new NumberFormatter(4);
+	public static final NumberFormatter DEFAULT_DEGREE_FORMATTER = new NumberFormatter(2);
+
 	private NumberFormat numberFormat;
 
-	public NumberFormatWrapper(int maximumFractionDigits) {
+	public NumberFormatter(int maximumFractionDigits) {
 		numberFormat = NumberFormat.getNumberInstance(Locale.ENGLISH);
 		numberFormat.setMaximumFractionDigits(maximumFractionDigits);
 		numberFormat.setRoundingMode(RoundingMode.HALF_UP);
@@ -16,12 +19,13 @@ public class NumberFormatWrapper
 
 	public String format(Number number)
 	{
-		if (number != null) return numberFormat.format(number);
+		if (number != null) {
+			String string = numberFormat.format(number);
+			if (string.equals("-0")) {
+				string = "0";
+			}
+			return string;
+		}
 		return null;
-	}
-
-	public NumberFormat getNumberFormat()
-	{
-		return numberFormat;
 	}
 }

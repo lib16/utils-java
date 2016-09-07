@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.lib16</groupId>
 	<artifactId>utils</artifactId>
-	<version>1.0</version>
+	<version>1.0.1</version>
 	<name>lib16 Utility Functions</name>
 	<description>Some utility classes for lib16.</description>
 	<url>http://lib16.com</url>
