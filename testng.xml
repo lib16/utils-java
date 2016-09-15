@@ -3,6 +3,7 @@
 	<test name="Unit">
 		<packages>
 			<package name="com.lib16.java.utils"/>
+			<package name="com.lib16.java.utils.enums"/>
 		</packages>
 	</test>
 </suite>

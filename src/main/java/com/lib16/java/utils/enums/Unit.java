@@ -1,4 +1,4 @@
-package com.lib16.java.utils;
+package com.lib16.java.utils.enums;
 
 /**
  * CSS Units
